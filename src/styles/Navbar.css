@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+.nav-bg {
+  background-color: #292e37;
+  color: #ffffff;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.logo {
+  font-size: 20px;
+  margin-left: 20rem;
+  font-weight: 600;
+}
+
+.menu {
+  font-size: 16px;
+  margin-right: 20rem;
+  font-weight: 400;
+  display: flex;
+}
+
+.menu div {
+  margin: 0 1rem;
+}

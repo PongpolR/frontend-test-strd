@@ -1,0 +1,23 @@
+.list {
+  text-align: center;
+  padding: 1rem 0;
+  margin: 1rem auto;
+  width: 50%;
+  border-bottom: 1px solid #292e37;
+}
+
+.detail {
+  /* text-align: left; */
+  text-align: justify;
+  margin-left: 1rem;
+}
+
+p {
+  font-weight: 400;
+  color: #818181;
+}
+
+span {
+  color: #80a8f2;
+  font-weight: 600;
+}
