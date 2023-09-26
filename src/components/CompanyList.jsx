@@ -8,9 +8,6 @@ export default function CompanyList() {
   const [data, setData] = useState([]);
 
   async function fetchData() {
-    // const response = await fetch("https://stockradars.co/assignment/data.php");
-    // const data = await response.json();
-    // setData(data);
     axios.get("https://stockradars.co/assignment/data.php").then((response) => {
       setData(response.data);
       setTotalPages(Math.ceil(response.data.length / itemsPerPage));
@@ -18,46 +15,27 @@ export default function CompanyList() {
   }
 
   useEffect(() => {
-    // const fetchDataList = async () => {
-    //   await fetchData();
-    // };
-    // fetchDataList();
-
-    // axios.get("https://stockradars.co/assignment/data.php").then((response) => {
-    //   setData(response.data);
-    //   setTotalPages(Math.ceil(response.data.length / itemsPerPage));
-    // });
-
     fetchData();
   }, []);
 
-  function searchList(e) {
-    setCurrentPage(0);
-    console.log(e);
-    let find = data.filter((item) => {
-      return item.N_fullname.includes(e);
-    });
-    console.log(find);
-    setData(find);
-    setTotalPages(Math.ceil(data.length / itemsPerPage));
+  const [search, setSearch] = useState("");
 
-    if (e === "") fetchData();
-  }
+  const filteredNames = data.filter((name) =>
+    name.N_fullname.trim().toLowerCase().includes(search.trim().toLowerCase())
+  );
 
-  // console.log(data);
+  let subset = filteredNames;
 
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 4;
   const startIndex = currentPage * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const subset = data.slice(startIndex, endIndex);
+  subset = filteredNames.slice(startIndex, endIndex);
 
   const handlePageChange = (selectedPage) => {
     setCurrentPage(selectedPage.selected);
   };
-
-  // const [search1, setSearch1] = useState();
 
   return (
     <div className="content">
@@ -67,33 +45,17 @@ export default function CompanyList() {
         className="search"
         type="text"
         placeholder="&#xF002;  Search"
-        // value={(e) => e.target.value}
-        onChange={(e) => searchList(e.target.value)}
+        value={search}
+        onChange={(e) => {
+          setSearch(e.target.value);
+          setTotalPages(Math.ceil(filteredNames.length / itemsPerPage));
+        }}
         style={{ fontFamily: "Poppins, FontAwesome" }}
       />
 
-      {/* <div className="list">
-        {data.map((item, id) => {
-          return <div key={id}>{item.N_fullname}</div>;
-        })}
-      </div> */}
-      {/* <MDBDataTable striped bordered small data={test} /> */}
-
       {subset.map((item, id) => (
-        // <div className="item" key={item.id}>
-        //   {item.N_fullname}
-        // </div>
-        <Item key={id} item={item} />
+        <Item key={id} item={item} id={id} />
       ))}
-
-      {/* <ReactPaginate
-        breakLabel="..."
-        pageCount={totalPages}
-        onPageChange={handlePageChange}
-        forcePage={currentPage}
-        previousLabel={"<"}
-        nextLabel={">"}
-      /> */}
 
       <ReactPaginate
         breakLabel="..."

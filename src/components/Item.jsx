@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
 import "../styles/Item.css";
+import { Link } from "react-router-dom";
 
 export default function Item(props) {
-  const { item } = props;
-  console.log(item);
+  const { item, id } = props;
 
   return (
     <div className="list">
       <div className="detail">
         <div>
-          <h2>{item.N_fullname}</h2>
+          <Link to={`/detail/${id + 1}`} state={{ item: item }}>
+            <h2>{item.N_fullname}</h2>
+          </Link>
+
           <p>
             <span>Business Type:</span>{" "}
             {item.N_BUSINESS_TYPE_E.substring(0, 101)}

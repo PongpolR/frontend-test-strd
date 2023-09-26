@@ -44,7 +44,7 @@ ul li.previous {
   color: #adafb2;
 }
 
-ul li.selected {
+ul li.selected a {
   color: #4200ff;
 }
 
@@ -58,8 +58,14 @@ ul li a {
   padding: 5px 10px;
   border: 1px solid DFE3E8;
   border-radius: 4px;
+  color: black;
 }
 
 ul li.disabled a {
   background-color: #40454a;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
 }
