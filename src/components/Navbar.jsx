@@ -20,7 +20,7 @@ export default function Navbar() {
             window.location.href = "/";
           }}
         >
-          <div>Home</div>
+          <div className="home">Home</div>
         </Link>
         <Link to={`/register`}>
           <div>Register</div>

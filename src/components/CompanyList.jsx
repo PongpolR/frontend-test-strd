@@ -6,7 +6,6 @@ import Item from "./Item";
 
 export default function CompanyList() {
   const [data, setData] = useState([]);
-  // const { d } = location.state;
 
   async function fetchData() {
     axios.get("https://stockradars.co/assignment/data.php").then((response) => {
@@ -40,7 +39,7 @@ export default function CompanyList() {
 
   return (
     <div className="content">
-      <div className="title">List Company With Market Capitalization</div>
+      <div className="title">Company List with Market Capitalization</div>
 
       <input
         className="search"

@@ -82,6 +82,7 @@ export default function Register() {
                 id="regis-input"
                 type="text"
                 name="firstname"
+                placeholder="Enter first name"
                 value={formDatas.values.firstname}
                 onChange={formDatas.handleChange}
                 className={
@@ -101,6 +102,7 @@ export default function Register() {
                 id="regis-input"
                 type="text"
                 name="lastname"
+                placeholder="Enter last name"
                 value={formDatas.values.lastname}
                 onChange={formDatas.handleChange}
                 className={
@@ -120,6 +122,7 @@ export default function Register() {
                 id="regis-input"
                 type="text"
                 name="telephone"
+                placeholder="Enter telephone"
                 value={formDatas.values.telephone}
                 onChange={formDatas.handleChange}
                 className={
@@ -139,6 +142,7 @@ export default function Register() {
                 id="regis-input"
                 type="email"
                 name="email"
+                placeholder="Enter email"
                 value={formDatas.values.email}
                 onChange={formDatas.handleChange}
                 className={
@@ -157,6 +161,7 @@ export default function Register() {
                 id="regis-input"
                 type="text"
                 name="ref"
+                placeholder="Enter reference"
                 value={formDatas.values.ref}
                 onChange={formDatas.handleChange}
                 className={
@@ -171,7 +176,7 @@ export default function Register() {
               )}
 
               <button type="submit" className="submit-btn">
-                SUBMIT
+                REGISTER
               </button>
             </form>
           )}
