@@ -10,7 +10,7 @@ export default function Navbar() {
           window.location.href = "/";
         }}
       >
-        <div className="logo">StocksRadars</div>
+        <div className="logo">StockRadars</div>
       </Link>
 
       <div className="menu">
