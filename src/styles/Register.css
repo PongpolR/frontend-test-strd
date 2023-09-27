@@ -1,18 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-.content {
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  padding-top: 60px;
-  background-color: #3b404e;
-  min-height: 100vh;
-  color: #ffffff;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;600&display=swap");
 
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
   margin: 0 auto;
+}
+
+input {
+  font-family: "lexend";
+}
+
+.regis-box,
+form {
+  width: max-content;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.regis-box {
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.regis-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #393537;
+  margin-bottom: 1rem;
+}
+
+.sub-regis-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #646464;
+}
+
+.label {
+  margin-top: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #393537;
+}
+
+.regis-input,
+#regis-input {
+  border-radius: 4px;
+  border: 1px solid #dedede;
+  background: #fff;
+  padding: 12px;
+  min-width: 350px;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  background-color: #292e37;
+  padding: 12px;
+  border-radius: 4px;
+  color: white;
+  font-family: Lexend;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.errors {
+  text-align: left;
+  font-size: 12px;
+  color: red;
 }
