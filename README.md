@@ -13,7 +13,7 @@ Install project with npm
 ```bash
   git clone https://github.com/PongpolR/frontend-test-strd
   cd frontend-test-strd
-  npm install
+  npm install (หรือ npm install --force)
 ```
 
 Run project
