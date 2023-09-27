@@ -6,6 +6,7 @@ import Item from "./Item";
 
 export default function CompanyList() {
   const [data, setData] = useState([]);
+  // const { d } = location.state;
 
   async function fetchData() {
     axios.get("https://stockradars.co/assignment/data.php").then((response) => {
@@ -54,7 +55,7 @@ export default function CompanyList() {
       />
 
       {subset.map((item, id) => (
-        <Item key={id} item={item} id={id} />
+        <Item key={id} item={item} id={item.N_name} />
       ))}
 
       <ReactPaginate

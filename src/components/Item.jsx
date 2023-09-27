@@ -9,7 +9,7 @@ export default function Item(props) {
     <div className="list">
       <div className="detail">
         <div>
-          <Link to={`/detail/${id + 1}`} state={{ item: item }}>
+          <Link to={`/detail/${id.toLowerCase()}`} state={{ item: item }}>
             <h2>{item.N_fullname}</h2>
           </Link>
 
@@ -20,7 +20,10 @@ export default function Item(props) {
           </p>
           <p>
             <span>Market Capitalization: </span>
-            {item.marketcap == null ? "- " : item.marketcap} Baht
+            {item.marketcap == null
+              ? "- "
+              : item.marketcap.toLocaleString()}{" "}
+            Baht
           </p>
         </div>
       </div>
