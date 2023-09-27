@@ -48,7 +48,7 @@ export default function CompanyList() {
         value={search}
         onChange={(e) => {
           setSearch(e.target.value);
-          setTotalPages(Math.ceil(filteredNames.length / itemsPerPage));
+          setCurrentPage(0);
         }}
         style={{ fontFamily: "Poppins, FontAwesome" }}
       />
